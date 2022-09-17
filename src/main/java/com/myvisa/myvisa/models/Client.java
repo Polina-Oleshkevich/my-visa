@@ -17,6 +17,9 @@ public class Client {
     private Date date_birth;
     private Integer phone;
     private String email;
+    private String login;
+    private String password;
+
 
     public Long getId() {
         return id;
@@ -72,5 +75,21 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
