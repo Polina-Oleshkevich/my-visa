@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
-public class Reguest {
+public class Request {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
