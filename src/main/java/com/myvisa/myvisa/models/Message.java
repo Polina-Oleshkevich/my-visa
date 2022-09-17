@@ -1,4 +1,4 @@
-package com.myvisa.myvisa.controller;
+package com.myvisa.myvisa.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

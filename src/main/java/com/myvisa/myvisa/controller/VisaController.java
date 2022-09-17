@@ -1,4 +1,5 @@
 package com.myvisa.myvisa.controller;
+import com.myvisa.myvisa.models.Message;
 import com.myvisa.myvisa.repos.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
