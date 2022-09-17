@@ -27,10 +27,10 @@ public class MainController {
         model.addAttribute("title", "Прайс");
         return "price";
     }
-    @GetMapping("/start")
-    public String start(Model model) {
-        model.addAttribute("title", "Заявки");
-        return "start";
+    @GetMapping("/visa-type")
+    public String visaType(Model model) {
+        model.addAttribute("title", "Информация о визах");
+        return "visa-type";
     }
     @GetMapping("/info")
     public String info(Model model) {
