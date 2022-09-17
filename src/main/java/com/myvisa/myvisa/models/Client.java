@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Client {
@@ -14,7 +14,7 @@ public class Client {
     private String first_name;
     private String last_name;
     private String fathers_name;
-    private Date date_birth;
+    private LocalDate date_birth;
     private Integer phone;
     private String email;
     private String login;
@@ -53,11 +53,11 @@ public class Client {
         this.fathers_name = fathers_name;
     }
 
-    public Date getDate_birth() {
+    public LocalDate getDate_birth() {
         return date_birth;
     }
 
-    public void setDate_birth(Date date_birth) {
+    public void setDate_birth(LocalDate date_birth) {
         this.date_birth = date_birth;
     }
 

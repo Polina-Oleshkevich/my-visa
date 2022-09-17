@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Center {
@@ -15,8 +15,8 @@ public class Center {
     private String address;
     private Integer phone;
     private String email;
-    private Date open_data;
-    private Date close_data;
+    private LocalDate open_data;
+    private LocalDate close_data;
 
     public Long getId() {
         return id;
@@ -58,19 +58,19 @@ public class Center {
         this.email = email;
     }
 
-    public Date getOpen_data() {
+    public LocalDate getOpen_data() {
         return open_data;
     }
 
-    public void setOpen_data(Date open_data) {
+    public void setOpen_data(LocalDate open_data) {
         this.open_data = open_data;
     }
 
-    public Date getClose_data() {
+    public LocalDate getClose_data() {
         return close_data;
     }
 
-    public void setClose_data(Date close_data) {
+    public void setClose_data(LocalDate close_data) {
         this.close_data = close_data;
     }
 }

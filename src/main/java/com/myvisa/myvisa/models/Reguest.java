@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Reguest {
@@ -12,9 +12,9 @@ public class Reguest {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String status;
-    private Date travel_date;
+    private LocalDate travel_date;
     private String documents;
-    private Date payment_date;
+    private LocalDate payment_date;
 
     public Long getId() {
         return id;
@@ -32,11 +32,11 @@ public class Reguest {
         this.status = status;
     }
 
-    public Date getTravel_date() {
+    public LocalDate getTravel_date() {
         return travel_date;
     }
 
-    public void setTravel_date(Date travel_date) {
+    public void setTravel_date(LocalDate travel_date) {
         this.travel_date = travel_date;
     }
 
@@ -48,11 +48,11 @@ public class Reguest {
         this.documents = documents;
     }
 
-    public Date getPayment_date() {
+    public LocalDate getPayment_date() {
         return payment_date;
     }
 
-    public void setPayment_date(Date payment_date) {
+    public void setPayment_date(LocalDate payment_date) {
         this.payment_date = payment_date;
     }
 }
