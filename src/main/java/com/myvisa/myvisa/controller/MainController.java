@@ -12,10 +12,10 @@ public class MainController {
         model.addAttribute("title", "Главная страница");
         return "home";
     }
-    @GetMapping("/account")
-    public String account(Model model) {
+    @GetMapping("/user")
+    public String user(Model model) {
         model.addAttribute("title", "Личный кабинет");
-        return "account";
+        return "user";
     }
 
     @GetMapping("/contact")

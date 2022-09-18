@@ -76,4 +76,9 @@ public class Center {
     public void setClose_data(LocalDate close_data) {
         this.close_data = close_data;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

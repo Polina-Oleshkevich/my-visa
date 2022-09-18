@@ -58,4 +58,9 @@ public class Request {
     public void setPayment_date(LocalDate payment_date) {
         this.payment_date = payment_date;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
