@@ -18,6 +18,9 @@ public class Center {
     private LocalDate open_data;
     private LocalDate close_data;
 
+    public Center() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -21,6 +21,9 @@ public class Manager {
     private String login;
     private String password;
 
+    public Manager() {
+    }
+
     public Long getId() {
         return id;
     }

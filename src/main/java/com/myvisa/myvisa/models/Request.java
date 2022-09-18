@@ -16,6 +16,9 @@ public class Request {
     private String documents;
     private LocalDate payment_date;
 
+    public Request() {
+    }
+
     public Long getId() {
         return id;
     }

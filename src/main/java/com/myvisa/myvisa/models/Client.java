@@ -20,6 +20,9 @@ public class Client {
     private String login;
     private String password;
 
+    public Client() {
+    }
+
 
     public Long getId() {
         return id;

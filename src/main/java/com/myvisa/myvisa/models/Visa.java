@@ -16,6 +16,9 @@ public class Visa {
     private String country;
     private Integer price;
 
+    public Visa() {
+    }
+
     public Long getId() {
         return id;
     }
