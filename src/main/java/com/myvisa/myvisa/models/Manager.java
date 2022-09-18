@@ -20,6 +20,7 @@ public class Manager {
     private String email;
     private String login;
     private String password;
+    private String status;
 
     public Manager() {
     }
@@ -103,9 +104,18 @@ public class Manager {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     @Override
     public String toString() {
         return super.toString();
     }
+
+
 }

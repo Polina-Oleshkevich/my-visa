@@ -31,5 +31,7 @@ public interface RequestService {
     @Transactional
     ResponseEntity<String> deleteRequest(@PathVariable("id") Long id);
 
+    ResponseEntity<String> deleteARequest(Long id);
+
     ResponseEntity<List<RequestDto>> getAllRequests();
 }

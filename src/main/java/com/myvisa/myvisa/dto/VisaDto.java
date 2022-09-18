@@ -10,4 +10,5 @@ public class VisaDto {
     private String purpose;
     private String country;
     private Integer price;
+    private String status;
 }

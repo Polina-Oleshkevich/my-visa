@@ -15,6 +15,7 @@ public class Visa {
     private String purpose;
     private String country;
     private Integer price;
+    private String status;
 
     public Visa() {
     }
@@ -70,5 +71,13 @@ public class Visa {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

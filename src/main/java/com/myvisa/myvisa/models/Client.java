@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Admin {
+public class Client {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
@@ -15,10 +15,15 @@ public class Admin {
     private String email;
     private String login;
     private String password;
-
     private String status;
 
-    public Admin() {
+    public Client() {
+    }
+
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
 
@@ -69,6 +74,7 @@ public class Admin {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public String getStatus() {
         return status;
     }
@@ -76,11 +82,4 @@ public class Admin {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-
 }

@@ -17,6 +17,7 @@ public class Center {
     private String email;
     private LocalDate open_data;
     private LocalDate close_data;
+    private String status;
 
     public Center() {
     }
@@ -77,6 +78,13 @@ public class Center {
         this.close_data = close_data;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     @Override
     public String toString() {
         return super.toString();
