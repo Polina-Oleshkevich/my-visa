@@ -2,10 +2,10 @@ package com.myvisa.myvisa.service;
 
 import com.myvisa.myvisa.dto.VisaDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 public interface VisaService {

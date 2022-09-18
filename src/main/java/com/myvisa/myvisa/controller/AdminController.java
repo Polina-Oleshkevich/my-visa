@@ -16,7 +16,7 @@ public class AdminController {
     private final AdminService adminService;
 
     @PostMapping
-    public ResponseEntity<String> createManager(@RequestBody AdminDto adminDto) {
+    public ResponseEntity<String> createDoctor(@RequestBody AdminDto adminDto) {
         return adminService.createAdmin(adminDto);
     }
 
@@ -39,5 +39,4 @@ public class AdminController {
     public ResponseEntity<List<AdminDto>> getAllAdmins() {
         return adminService.getAllAdmins();
     }
-
 }

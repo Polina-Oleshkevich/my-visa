@@ -2,13 +2,14 @@ package com.myvisa.myvisa.service;
 
 import com.myvisa.myvisa.dto.AdminDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 public interface AdminService {
+
     AdminDto create(AdminDto adminDto);
 
     AdminDto read(Long id);
@@ -32,6 +33,5 @@ public interface AdminService {
     ResponseEntity<String> deleteAdmin(@PathVariable("id") Long id);
 
     ResponseEntity<List<AdminDto>> getAllAdmins();
-
 }
 
