@@ -12,7 +12,7 @@ public class Authority {
 
     @ManyToOne
     @JoinColumn(name = "username")
-    private Client client;
+    private User user;
 
     public Authority() {
     }
@@ -25,12 +25,12 @@ public class Authority {
         this.authority = authority;
     }
 
-    public Client getUser() {
-        return client;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser(Client user) {
-        this.client = client;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
