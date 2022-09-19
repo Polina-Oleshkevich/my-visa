@@ -13,9 +13,6 @@ public class Admin {
     private String first_name;
     private String last_name;
     private String email;
-    private String login;
-    private String password;
-
     private String status;
 
     public Admin() {
@@ -54,21 +51,6 @@ public class Admin {
         this.email = email;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     public String getStatus() {
         return status;
     }

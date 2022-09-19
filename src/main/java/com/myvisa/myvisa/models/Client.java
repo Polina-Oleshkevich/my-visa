@@ -15,8 +15,6 @@ public class Client {
     private String last_name;
     private LocalDate date_birth;
     private String email;
-    private String login;
-    private String password;
     private String status;
 
     public Client() {
@@ -56,22 +54,6 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getStatus() {

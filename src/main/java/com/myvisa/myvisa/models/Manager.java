@@ -17,7 +17,7 @@ public class Manager {
     private LocalDate employment_date;
     private Integer phone;
     private String email;
-    private Integer manager_id;
+    private Integer center_id;
     private String status;
 
     public Manager() {
@@ -90,10 +90,22 @@ public class Manager {
 
 
     public Integer getManager_id() {
-        return manager_id;
+        return center_id;
     }
 
     public void setManager_id(Integer manager_id) {
-        this.manager_id = manager_id;
+        this.center_id = manager_id;
+    }
+
+    public Integer getCenter_id() {
+        return center_id;
+    }
+
+    public void setCenter_id(Integer center_id) {
+        this.center_id = center_id;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }
