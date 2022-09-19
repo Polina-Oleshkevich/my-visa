@@ -17,8 +17,7 @@ public class Manager {
     private LocalDate employment_date;
     private Integer phone;
     private String email;
-    private String login;
-    private String password;
+    private Integer manager_id;
     private String status;
 
     public Manager() {
@@ -81,24 +80,6 @@ public class Manager {
         this.email = email;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public String getStatus() {
-        return status;
-    }
     public void setStatus(String status) {
         this.status = status;
     }
@@ -108,4 +89,11 @@ public class Manager {
     }
 
 
+    public Integer getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(Integer manager_id) {
+        this.manager_id = manager_id;
+    }
 }
