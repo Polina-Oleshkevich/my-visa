@@ -11,9 +11,9 @@ public class Request {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
+    private String country;
     private LocalDate travel_date;
-    private String documents;
-    private LocalDate payment_date;
+
     private String status;
 
     public Request() {
@@ -48,28 +48,17 @@ public class Request {
         this.travel_date = travel_date;
     }
 
-    public String getDocuments() {
-
-        return documents;
-    }
-
-    public void setDocuments(String documents) {
-
-        this.documents = documents;
-    }
-
-    public LocalDate getPayment_date() {
-
-        return payment_date;
-    }
-
-    public void setPayment_date(LocalDate payment_date) {
-
-        this.payment_date = payment_date;
-    }
 
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

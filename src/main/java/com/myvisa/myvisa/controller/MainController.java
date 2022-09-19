@@ -61,7 +61,7 @@ public class MainController {
     @RequestMapping("/users")
     public String showAllUsers(Model model, Pageable pageable) {
         model.addAttribute("users", userRepository.findAll(pageable));
-        return "user";
+        return "userreg";
     }
     @GetMapping("/login")
     public String toLoginPage() {

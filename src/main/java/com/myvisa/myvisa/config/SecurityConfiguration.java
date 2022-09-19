@@ -1,4 +1,4 @@
-package com.myvisa.myvisa.securingweb;
+package com.myvisa.myvisa.config;
 
 import com.myvisa.myvisa.util.DefaultAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
