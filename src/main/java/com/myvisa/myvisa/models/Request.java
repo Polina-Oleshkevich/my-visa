@@ -11,9 +11,11 @@ public class Request {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private String country;
+    private LocalDate visit_date;
     private LocalDate travel_date;
-
+    private Integer client_id;
+    private Integer center_id;
+    private Integer manager_id;
     private String status;
 
     public Request() {
@@ -48,17 +50,40 @@ public class Request {
         this.travel_date = travel_date;
     }
 
-
     @Override
     public String toString() {
         return super.toString();
     }
 
-    public String getCountry() {
-        return country;
+    public LocalDate getVisit_date() {
+        return visit_date;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setVisit_date(LocalDate visit_date) {
+        this.visit_date = visit_date;
+    }
+
+    public Integer getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(Integer client_id) {
+        this.client_id = client_id;
+    }
+
+    public Integer getCenter_id() {
+        return center_id;
+    }
+
+    public void setCenter_id(Integer center_id) {
+        this.center_id = center_id;
+    }
+
+    public Integer getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(Integer manager_id) {
+        this.manager_id = manager_id;
     }
 }

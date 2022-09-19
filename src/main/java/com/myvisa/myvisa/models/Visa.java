@@ -15,6 +15,8 @@ public class Visa {
     private String purpose;
     private String country;
     private Integer price;
+    private Integer admin_id;
+    private Integer center_id;
     private String status;
 
     public Visa() {
@@ -80,5 +82,21 @@ public class Visa {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getAdmin_id() {
+        return admin_id;
+    }
+
+    public void setAdmin_id(Integer admin_id) {
+        this.admin_id = admin_id;
+    }
+
+    public Integer getCenter_id() {
+        return center_id;
+    }
+
+    public void setCenter_id(Integer center_id) {
+        this.center_id = center_id;
     }
 }
