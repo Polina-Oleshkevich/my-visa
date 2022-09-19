@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import javax.sql.DataSource;
@@ -26,7 +28,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource);
+        auth.jdbcAuthentication().dataSource(dataSource)
+                .withDefaultSchema()
+                .withUser(User.withUsername("user").password("password").roles("USER"))
+                .withUser(User.withUsername("client").password("password").roles("CLIENT"))
+                .withUser(User.withUsername("manager").password("password").roles("MANAGER"))
+                .withUser(User.withUsername("admin").password("password").roles("ADMIN"));
     }
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler() {
@@ -34,14 +41,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/requests/**", "/admin/**", "/client/**", "/center/**", "/manager/**", "/visa/**").authenticated()
+        http.authorizeRequests()
+                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/manager/**", "/center/**", "/visa/**",
+                        "/requests/**", "/client/**").hasAnyAuthority("ROLE_MANAGER", "ROLE_ADMIN")
+                .antMatchers("/user/**").hasAnyAuthority("ROLE_USER", "ROLE_CLIENT", "ROLE_ADMIN")
+                .antMatchers("/**").permitAll()
                 .and()
-                .formLogin()
+                .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+
+                /*.formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/authenticateTheUser")
-                .successHandler(authenticationSuccessHandler());
+                .successHandler(authenticationSuccessHandler());*/
+
         }
     }
 
