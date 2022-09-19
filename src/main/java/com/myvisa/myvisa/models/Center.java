@@ -16,7 +16,7 @@ public class Center {
     private Integer phone;
     private String email;
     private LocalDate open_data;
-    private LocalDate close_data;
+       private String admin_id;
     private String status;
 
     public Center() {
@@ -70,13 +70,6 @@ public class Center {
         this.open_data = open_data;
     }
 
-    public LocalDate getClose_data() {
-        return close_data;
-    }
-
-    public void setClose_data(LocalDate close_data) {
-        this.close_data = close_data;
-    }
 
     public String getStatus() {
         return status;
@@ -88,5 +81,13 @@ public class Center {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public String getAdmin_id() {
+        return admin_id;
+    }
+
+    public void setAdmin_id(String admin_id) {
+        this.admin_id = admin_id;
     }
 }

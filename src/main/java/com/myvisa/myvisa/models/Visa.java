@@ -11,7 +11,7 @@ public class Visa {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String visa_type;
-    private String visa_term;
+    private Integer visa_term;
     private String purpose;
     private String country;
     private Integer price;
@@ -36,11 +36,12 @@ public class Visa {
         this.visa_type = visa_type;
     }
 
-    public String getVisa_term() {
+    public Integer getVisa_term() {
         return visa_term;
     }
 
-    public void setVisa_term(String visa_term) {
+    public void setVisa_term(Integer visa_term) {
+
         this.visa_term = visa_term;
     }
 

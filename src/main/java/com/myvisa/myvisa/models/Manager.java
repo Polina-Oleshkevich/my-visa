@@ -13,7 +13,6 @@ public class Manager {
     private Long id;
     private String first_name;
     private String last_name;
-    private String fathers_name;
     private LocalDate date_birth;
     private LocalDate employment_date;
     private Integer phone;
@@ -49,13 +48,6 @@ public class Manager {
         this.last_name = last_name;
     }
 
-    public String getFathers_name() {
-        return fathers_name;
-    }
-
-    public void setFathers_name(String fathers_name) {
-        this.fathers_name = fathers_name;
-    }
 
     public LocalDate getDate_birth() {
         return date_birth;

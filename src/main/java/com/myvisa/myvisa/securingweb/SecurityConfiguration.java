@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import javax.sql.DataSource;
@@ -28,12 +27,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource)
-                .withDefaultSchema()
+        auth.jdbcAuthentication().dataSource(dataSource);
+                /* .withDefaultSchema()
                 .withUser(User.withUsername("user").password("password").roles("USER"))
                 .withUser(User.withUsername("client").password("password").roles("CLIENT"))
                 .withUser(User.withUsername("manager").password("password").roles("MANAGER"))
-                .withUser(User.withUsername("admin").password("password").roles("ADMIN"));
+                .withUser(User.withUsername("admin").password("password").roles("ADMIN"))*/
     }
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler() {
@@ -55,6 +54,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .loginProcessingUrl("/authenticateTheUser")
                 .successHandler(authenticationSuccessHandler());*/
+
 
         }
     }
