@@ -23,6 +23,9 @@
     <p>Шаг 6:</p>
     <p>Забрать готовые документы</p>
 </div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 <div th:insert="visas/footer :: footer"></div>
 </body>
 </html>
