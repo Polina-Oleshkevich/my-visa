@@ -1,10 +1,8 @@
 package com.myvisa.myvisa.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.myvisa.myvisa.dto.AdminDto;
 import com.myvisa.myvisa.dto.VisaDto;
 import com.myvisa.myvisa.exceptions.CenterServiceException;
-import com.myvisa.myvisa.models.Admin;
 import com.myvisa.myvisa.models.Visa;
 import com.myvisa.myvisa.repos.VisaRepository;
 import com.myvisa.myvisa.util.Converter;
@@ -39,7 +37,7 @@ public class VisaServiceImplements implements VisaService{
         }
 
         Visa visa = objectMapper.convertValue(visaDto, Visa.class);
-        visa.setStatus(String.valueOf(Status.CREATED));
+        visa.setStatus(String.valueOf(Status.LOADING));
         Visa save = visaRepository.save(visa);
         return objectMapper.convertValue(save, VisaDto.class);
     }
@@ -61,7 +59,7 @@ public class VisaServiceImplements implements VisaService{
         read(id);
 
         Visa visa = objectMapper.convertValue(visaDto, Visa.class);
-        visa.setStatus(String.valueOf(Status.UPDATE));
+        visa.setStatus(String.valueOf(Status.READ_ONLY));
         Visa save = visaRepository.save(visa);
         return objectMapper.convertValue(save, VisaDto.class);
     }

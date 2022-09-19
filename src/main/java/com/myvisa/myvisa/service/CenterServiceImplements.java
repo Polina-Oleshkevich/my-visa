@@ -36,7 +36,7 @@ public class CenterServiceImplements implements CenterService{
         }
 
         Center center = objectMapper.convertValue(centerDto, Center.class);
-        center.setStatus(String.valueOf(Status.CREATED));
+        center.setStatus(String.valueOf(Status.LOADING));
         Center save = centerRepository.save(center);
         return objectMapper.convertValue(save, CenterDto.class);
     }
@@ -58,7 +58,7 @@ public class CenterServiceImplements implements CenterService{
         read(id);
 
         Center center = objectMapper.convertValue(centerDto, Center.class);
-        center.setStatus(String.valueOf(Status.UPDATED));
+        center.setStatus(String.valueOf(Status.READ_ONLY));
         Center save = centerRepository.save(center);
         return objectMapper.convertValue(save, CenterDto.class);
     }

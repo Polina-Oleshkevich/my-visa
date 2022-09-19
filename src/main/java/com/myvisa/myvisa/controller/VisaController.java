@@ -20,17 +20,17 @@ public class VisaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<String> readRequest(@PathVariable("id") Long id) {
+    public ResponseEntity<String> readVisa(@PathVariable("id") Long id) {
         return visaService.readVisa(id);
     }
 
     @PutMapping
-    public ResponseEntity<String> updateRequest(@RequestBody VisaDto visa) {
+    public ResponseEntity<String> updateVisa(@RequestBody VisaDto visa) {
         return visaService.updateVisa(visa);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteRequest(@PathVariable("id") Long id) {
+    public ResponseEntity<String> deleteVisa(@PathVariable("id") Long id) {
         return visaService.deleteVisa(id);
     }
 

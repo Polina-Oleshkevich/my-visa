@@ -36,7 +36,7 @@ public class RequestServiceImplements implements RequestService{
         }
 
         Request request = objectMapper.convertValue(requestDto, Request.class);
-        request.setStatus(String.valueOf(Status.CREATED));
+        request.setStatus(String.valueOf(Status.LOADING));
         Request save = requestRepository.save(request);
         return objectMapper.convertValue(save, RequestDto.class);
     }
@@ -58,7 +58,7 @@ public class RequestServiceImplements implements RequestService{
         read(id);
 
         Request request = objectMapper.convertValue(requestDto, Request.class);
-        request.setStatus(String.valueOf(Status.UPDATE));
+        request.setStatus(String.valueOf(Status.READ_ONLY));
         Request save = requestRepository.save(request);
         return objectMapper.convertValue(save, RequestDto.class);
     }

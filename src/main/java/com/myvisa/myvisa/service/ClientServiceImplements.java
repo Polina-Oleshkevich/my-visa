@@ -36,7 +36,7 @@ public class ClientServiceImplements implements ClientService{
         }
 
         Client client = objectMapper.convertValue(clientDto, Client.class);
-        client.setStatus(String.valueOf(Status.CREATED));
+        client.setStatus(String.valueOf(Status.LOADING));
         Client save = clientRepository.save(client);
         return objectMapper.convertValue(save, ClientDto.class);
     }
@@ -58,7 +58,7 @@ public class ClientServiceImplements implements ClientService{
         read(id);
 
         Client client = objectMapper.convertValue(clientDto, Client.class);
-        client.setStatus(String.valueOf(Status.UPDATE));
+        client.setStatus(String.valueOf(Status.READ_ONLY));
         Client save = clientRepository.save(client);
         return objectMapper.convertValue(save, ClientDto.class);
     }
