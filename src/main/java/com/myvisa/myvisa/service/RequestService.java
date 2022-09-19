@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public interface RequestService {
-    RequestDto create(RequestDto procedure);
+    RequestDto create(RequestDto request);
 
     RequestDto read(Long id);
 
@@ -30,8 +30,6 @@ public interface RequestService {
 
     @Transactional
     ResponseEntity<String> deleteRequest(@PathVariable("id") Long id);
-
-    ResponseEntity<String> deleteARequest(Long id);
 
     ResponseEntity<List<RequestDto>> getAllRequests();
 }

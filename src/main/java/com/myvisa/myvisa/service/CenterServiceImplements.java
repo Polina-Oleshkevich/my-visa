@@ -43,9 +43,9 @@ public class CenterServiceImplements implements CenterService{
 
     @Override
     public CenterDto read(Long id) {
-        Center branch = centerRepository.findById(id).orElseThrow(() ->
+        Center center = centerRepository.findById(id).orElseThrow(() ->
                 new CenterServiceException(String.format(EXC_MESSAGE, id)));
-        return objectMapper.convertValue(branch, CenterDto.class);
+        return objectMapper.convertValue(center, CenterDto.class);
     }
 
     @Override
@@ -101,15 +101,11 @@ public class CenterServiceImplements implements CenterService{
 
         return new ResponseEntity<>(dto, HttpStatus.OK);    }
 
-    @Override
-    public ResponseEntity<String> updateCenter(CenterDto centerDto) {
-        return null;
-    }
 
     @Override
-    public ResponseEntity<String> updateBranch(CenterDto centerDto) {
+    public ResponseEntity<String> updateCenter(CenterDto centerDto) {
         if (centerDto == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Branch is not updated! Body is null");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Center is not updated! Body is null");
         }
 
         CenterDto center = update(centerDto);

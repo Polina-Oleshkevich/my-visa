@@ -93,7 +93,7 @@ public class RequestServiceImplements implements RequestService{
     @Override
     public ResponseEntity<String> readRequest(Long id) {
         if (id == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Admin is not found! Id is null");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Request is not found! Id is null");
         }
 
         RequestDto request = read(id);
@@ -116,11 +116,6 @@ public class RequestServiceImplements implements RequestService{
 
     @Override
     public ResponseEntity<String> deleteRequest(Long id) {
-        return null;
-    }
-
-    @Override
-    public ResponseEntity<String> deleteARequest(Long id) {
         if (id == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Request assignment is not deleted! Id is null");
         }

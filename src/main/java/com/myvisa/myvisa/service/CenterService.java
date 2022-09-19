@@ -29,7 +29,6 @@ public interface CenterService {
     @Transactional
     ResponseEntity<String> updateCenter(@RequestBody CenterDto centerDto);
 
-    ResponseEntity<String> updateBranch(CenterDto centerDto);
 
     @Transactional
     ResponseEntity<String> deleteCenter(@PathVariable("id") Long id);

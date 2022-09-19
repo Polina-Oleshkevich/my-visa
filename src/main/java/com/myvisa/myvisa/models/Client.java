@@ -19,13 +19,10 @@ public class Client {
 
     public Client() {
     }
-
-
     @Override
     public String toString() {
         return super.toString();
     }
-
 
     public Long getId() {
         return id;
@@ -78,7 +75,6 @@ public class Client {
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }

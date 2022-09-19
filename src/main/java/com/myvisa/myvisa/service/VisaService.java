@@ -14,7 +14,7 @@ public interface VisaService {
     VisaDto read(Long id);
 
     @Transactional
-    VisaDto update(VisaDto request);
+    VisaDto update(VisaDto visa);
 
     @Transactional
     VisaDto delete(Long id);
