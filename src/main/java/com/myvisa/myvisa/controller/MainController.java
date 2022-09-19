@@ -17,6 +17,13 @@ public class MainController {
         model.addAttribute("title", "Личный кабинет");
         return "account";
     }
+
+        @GetMapping("/sign_in")
+        public String sign_in(Model model) {
+            model.addAttribute("title", "Подать заявку");
+            return "sign_in";
+        }
+
     @GetMapping("/contact")
     public String contact(Model model) {
         model.addAttribute("title", "О визовом центре");
