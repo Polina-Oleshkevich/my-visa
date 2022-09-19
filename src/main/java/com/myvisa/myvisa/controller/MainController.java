@@ -12,12 +12,11 @@ public class MainController {
         model.addAttribute("title", "Главная страница");
         return "home";
     }
-    @GetMapping("/user")
-    public String user(Model model) {
+    @GetMapping("/account")
+    public String account(Model model) {
         model.addAttribute("title", "Личный кабинет");
-        return "user";
+        return "account";
     }
-
     @GetMapping("/contact")
     public String contact(Model model) {
         model.addAttribute("title", "О визовом центре");
