@@ -1,0 +1,7 @@
+FROM openjdk:11-jre-slim
+
+VOLUME /tmp
+
+ADD /target/my-visa-spring-boot.jar my-visa-spring-boot.jar
+
+ENTRYPOINT ["java", "-jar", "/my-visa-spring-boot.jar"]

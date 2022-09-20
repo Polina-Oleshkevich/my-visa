@@ -1,0 +1,22 @@
+spring:
+  jpa:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  flyway:
+    baselineOnMigrate: true
+    enabled: false
+
+server:
+  error:
+    include-message: always
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+auth:
+  header: Authorization
+  token: >-
+    Basic YTAzZDZjZTYtMmQxNS00MjYzLWEyNWItMTAzODFhYTY2ZTRicGFzc3dvcmQ6ZDhiOTg1MTMtMjljOC00ZWFlLWI5NjgtZWNmZGNmNzQ3MThk

@@ -4,11 +4,11 @@ import org.springframework.security.web.authentication.preauth.AbstractPreAuthen
 
 import javax.servlet.http.HttpServletRequest;
 
-public class Authority extends AbstractPreAuthenticatedProcessingFilter {
+public class AuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 
     private final String principalRequestHeader;
 
-    public Authority(String principalRequestHeader) {
+    public AuthFilter(String principalRequestHeader) {
         this.principalRequestHeader = principalRequestHeader;
     }
 
