@@ -37,7 +37,7 @@ public class AdminServiceImplements implements AdminService {
         }
 
         Admin admin = objectMapper.convertValue(adminDto, Admin.class);
-        admin.setStatus(String.valueOf(Status.LOADING));
+        admin.setStatus(String.valueOf(Status.CREATED));
         Admin save = adminRepository.save(admin);
         return objectMapper.convertValue(save, AdminDto.class);
     }
@@ -59,7 +59,7 @@ public class AdminServiceImplements implements AdminService {
         read(id);
 
         Admin admin = objectMapper.convertValue(adminDto, Admin.class);
-        admin.setStatus(String.valueOf(Status.READ_ONLY));
+        admin.setStatus(String.valueOf(Status.UPDATED));
         Admin save = adminRepository.save(admin);
         return objectMapper.convertValue(save, AdminDto.class);
     }

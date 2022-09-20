@@ -36,7 +36,7 @@ public class ManagerServiceImplements  implements ManagerService{
         }
 
         Manager manager = objectMapper.convertValue(managerDto, Manager.class);
-        manager.setStatus(String.valueOf(Status.LOADING));
+        manager.setStatus(String.valueOf(Status.CREATE));
         Manager save = managerRepository.save(manager);
         return objectMapper.convertValue(save, ManagerDto.class);
     }
@@ -56,7 +56,7 @@ public class ManagerServiceImplements  implements ManagerService{
         }
         read(id);
         Manager manager = objectMapper.convertValue(managerDto, Manager.class);
-        manager.setStatus(String.valueOf(Status.READ_ONLY));
+        manager.setStatus(String.valueOf(Status.UPDATE));
         Manager save = managerRepository.save(manager);
         return objectMapper.convertValue(save, ManagerDto.class);
     }

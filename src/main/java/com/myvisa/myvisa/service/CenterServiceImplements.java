@@ -1,5 +1,5 @@
 package com.myvisa.myvisa.service;
-
+import com.myvisa.myvisa.models.Status;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myvisa.myvisa.dto.CenterDto;
 import com.myvisa.myvisa.exceptions.CenterServiceException;
@@ -8,14 +8,12 @@ import com.myvisa.myvisa.repos.CenterRepository;
 import com.myvisa.myvisa.util.Converter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.engine.spi.Status;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -36,7 +34,7 @@ public class CenterServiceImplements implements CenterService{
         }
 
         Center center = objectMapper.convertValue(centerDto, Center.class);
-        center.setStatus(String.valueOf(Status.LOADING));
+        center.setStatus(String.valueOf(status.CREATE));
         Center save = centerRepository.save(center);
         return objectMapper.convertValue(save, CenterDto.class);
     }
@@ -58,7 +56,7 @@ public class CenterServiceImplements implements CenterService{
         read(id);
 
         Center center = objectMapper.convertValue(centerDto, Center.class);
-        center.setStatus(String.valueOf(Status.READ_ONLY));
+        center.setStatus(String.valueOf(status.UPDATE));
         Center save = centerRepository.save(center);
         return objectMapper.convertValue(save, CenterDto.class);
     }
@@ -66,7 +64,7 @@ public class CenterServiceImplements implements CenterService{
     @Override
     public CenterDto delete(Long id) {
         Center center = objectMapper.convertValue(read(id), Center.class);
-        center.setStatus(String.valueOf(Status.DELETED));
+        center.setStatus(String.valueOf(status.DELETED));
         centerRepository.save(center);
         return objectMapper.convertValue(center, CenterDto.class);
     }

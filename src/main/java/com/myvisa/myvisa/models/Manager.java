@@ -1,109 +1,31 @@
 package com.myvisa.myvisa.models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDate;
-
+@Data
 @Entity
 @Table(schema="public", name="manager")
 public class Manager {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String first_name;
     private String last_name;
     private LocalDate date_birth;
     private LocalDate employment_date;
+
+    @Column(name = "phone")
     private Integer phone;
+
+    @Column(name = "email")
     private String email;
-    private Integer center_id;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Manager manager;
+
     private String status;
 
-    public Manager() {
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
-
-    public LocalDate getDate_birth() {
-        return date_birth;
-    }
-
-    public void setDate_birth(LocalDate date_birth) {
-        this.date_birth = date_birth;
-    }
-
-    public LocalDate getEmployment_date() {
-        return employment_date;
-    }
-
-    public void setEmployment_date(LocalDate employment_date) {
-        this.employment_date = employment_date;
-    }
-
-    public Integer getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Integer phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-
-    public Integer getManager_id() {
-        return center_id;
-    }
-
-    public void setManager_id(Integer manager_id) {
-        this.center_id = manager_id;
-    }
-
-    public Integer getCenter_id() {
-        return center_id;
-    }
-
-    public void setCenter_id(Integer center_id) {
-        this.center_id = center_id;
-    }
-
-    public String getStatus() {
-        return status;
-    }
 }

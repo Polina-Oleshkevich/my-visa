@@ -1,87 +1,32 @@
 package com.myvisa.myvisa.models;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDate;
-
+@Data
 @Entity
 @Table(schema="public", name="request")
 public class Request {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "visit_date")
     private LocalDate visit_date;
+
+    @Column(name = "travel_date")
     private LocalDate travel_date;
-    private Integer client_id;
-    private Integer center_id;
-    private Integer manager_id;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Client client;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Center center;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Manager manager;
+
     private String status;
 
-    public Request() {
-    }
-
-    public Long getId() {
-
-        return id;
-    }
-
-    public void setId(Long id) {
-
-        this.id = id;
-    }
-
-    public String getStatus() {
-
-        return status;
-    }
-    public void setStatus(String status) {
-
-        this.status = status;
-    }
-
-    public LocalDate getTravel_date() {
-
-        return travel_date;
-    }
-
-    public void setTravel_date(LocalDate travel_date) {
-
-        this.travel_date = travel_date;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    public LocalDate getVisit_date() {
-        return visit_date;
-    }
-
-    public void setVisit_date(LocalDate visit_date) {
-        this.visit_date = visit_date;
-    }
-
-    public Integer getClient_id() {
-        return client_id;
-    }
-
-    public void setClient_id(Integer client_id) {
-        this.client_id = client_id;
-    }
-
-    public Integer getCenter_id() {
-        return center_id;
-    }
-
-    public void setCenter_id(Integer center_id) {
-        this.center_id = center_id;
-    }
-
-    public Integer getManager_id() {
-        return manager_id;
-    }
-
-    public void setManager_id(Integer manager_id) {
-        this.manager_id = manager_id;
-    }
 }

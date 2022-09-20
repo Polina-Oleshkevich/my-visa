@@ -37,7 +37,7 @@ public class VisaServiceImplements implements VisaService{
         }
 
         Visa visa = objectMapper.convertValue(visaDto, Visa.class);
-        visa.setStatus(String.valueOf(Status.LOADING));
+        visa.setStatus(String.valueOf(Status.CREATE));
         Visa save = visaRepository.save(visa);
         return objectMapper.convertValue(save, VisaDto.class);
     }
@@ -59,7 +59,7 @@ public class VisaServiceImplements implements VisaService{
         read(id);
 
         Visa visa = objectMapper.convertValue(visaDto, Visa.class);
-        visa.setStatus(String.valueOf(Status.READ_ONLY));
+        visa.setStatus(String.valueOf(Status.UPDATE));
         Visa save = visaRepository.save(visa);
         return objectMapper.convertValue(save, VisaDto.class);
     }
