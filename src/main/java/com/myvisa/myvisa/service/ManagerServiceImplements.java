@@ -2,13 +2,13 @@ package com.myvisa.myvisa.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myvisa.myvisa.dto.ManagerDto;
+import com.myvisa.myvisa.models.Status;
 import com.myvisa.myvisa.exceptions.CenterServiceException;
 import com.myvisa.myvisa.models.Manager;
 import com.myvisa.myvisa.repos.ManagerRepository;
 import com.myvisa.myvisa.util.Converter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.engine.spi.Status;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -36,7 +36,7 @@ public class ManagerServiceImplements  implements ManagerService{
         }
 
         Manager manager = objectMapper.convertValue(managerDto, Manager.class);
-        manager.setStatus(String.valueOf(Status.CREATE));
+        manager.setStatus(String.valueOf(Status.CREATED));
         Manager save = managerRepository.save(manager);
         return objectMapper.convertValue(save, ManagerDto.class);
     }
@@ -56,7 +56,7 @@ public class ManagerServiceImplements  implements ManagerService{
         }
         read(id);
         Manager manager = objectMapper.convertValue(managerDto, Manager.class);
-        manager.setStatus(String.valueOf(Status.UPDATE));
+        manager.setStatus(String.valueOf(Status.UPDATED));
         Manager save = managerRepository.save(manager);
         return objectMapper.convertValue(save, ManagerDto.class);
     }

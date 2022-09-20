@@ -5,11 +5,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myvisa.myvisa.dto.RequestDto;
 import com.myvisa.myvisa.exceptions.CenterServiceException;
 import com.myvisa.myvisa.models.Request;
+import com.myvisa.myvisa.models.Status;
 import com.myvisa.myvisa.repos.RequestRepository;
 import com.myvisa.myvisa.util.Converter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.engine.spi.Status;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -36,7 +36,7 @@ public class RequestServiceImplements implements RequestService{
         }
 
         Request request = objectMapper.convertValue(requestDto, Request.class);
-        request.setStatus(String.valueOf(Status.CREATE));
+        request.setStatus(String.valueOf(Status.CREATED));
         Request save = requestRepository.save(request);
         return objectMapper.convertValue(save, RequestDto.class);
     }
@@ -58,7 +58,7 @@ public class RequestServiceImplements implements RequestService{
         read(id);
 
         Request request = objectMapper.convertValue(requestDto, Request.class);
-        request.setStatus(String.valueOf(Status.UPDATE));
+        request.setStatus(String.valueOf(Status.UPDATED));
         Request save = requestRepository.save(request);
         return objectMapper.convertValue(save, RequestDto.class);
     }

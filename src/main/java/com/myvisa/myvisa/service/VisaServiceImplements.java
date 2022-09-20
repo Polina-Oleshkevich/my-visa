@@ -8,7 +8,7 @@ import com.myvisa.myvisa.repos.VisaRepository;
 import com.myvisa.myvisa.util.Converter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.engine.spi.Status;
+import com.myvisa.myvisa.models.Status;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -37,7 +37,7 @@ public class VisaServiceImplements implements VisaService{
         }
 
         Visa visa = objectMapper.convertValue(visaDto, Visa.class);
-        visa.setStatus(String.valueOf(Status.CREATE));
+        visa.setStatus(String.valueOf(Status.CREATED));
         Visa save = visaRepository.save(visa);
         return objectMapper.convertValue(save, VisaDto.class);
     }
@@ -59,7 +59,7 @@ public class VisaServiceImplements implements VisaService{
         read(id);
 
         Visa visa = objectMapper.convertValue(visaDto, Visa.class);
-        visa.setStatus(String.valueOf(Status.UPDATE));
+        visa.setStatus(String.valueOf(Status.UPDATED));
         Visa save = visaRepository.save(visa);
         return objectMapper.convertValue(save, VisaDto.class);
     }

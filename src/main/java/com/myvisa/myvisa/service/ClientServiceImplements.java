@@ -1,6 +1,7 @@
 package com.myvisa.myvisa.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.myvisa.myvisa.models.Status;
 import com.myvisa.myvisa.dto.ClientDto;
 import com.myvisa.myvisa.exceptions.CenterServiceException;
 import com.myvisa.myvisa.models.Client;
@@ -8,7 +9,6 @@ import com.myvisa.myvisa.repos.ClientRepository;
 import com.myvisa.myvisa.util.Converter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.engine.spi.Status;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -36,7 +36,7 @@ public class ClientServiceImplements implements ClientService{
         }
 
         Client client = objectMapper.convertValue(clientDto, Client.class);
-        client.setStatus(String.valueOf(Status.CREATE));
+        client.setStatus(String.valueOf(Status.CREATED));
         Client save = clientRepository.save(client);
         return objectMapper.convertValue(save, ClientDto.class);
     }
@@ -58,7 +58,7 @@ public class ClientServiceImplements implements ClientService{
         read(id);
 
         Client client = objectMapper.convertValue(clientDto, Client.class);
-        client.setStatus(String.valueOf(Status.UPDATE));
+        client.setStatus(String.valueOf(Status.UPDATED));
         Client save = clientRepository.save(client);
         return objectMapper.convertValue(save, ClientDto.class);
     }

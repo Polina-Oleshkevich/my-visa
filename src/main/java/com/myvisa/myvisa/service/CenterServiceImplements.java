@@ -1,9 +1,10 @@
 package com.myvisa.myvisa.service;
-import com.myvisa.myvisa.models.Status;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myvisa.myvisa.dto.CenterDto;
 import com.myvisa.myvisa.exceptions.CenterServiceException;
 import com.myvisa.myvisa.models.Center;
+import com.myvisa.myvisa.models.Status;
 import com.myvisa.myvisa.repos.CenterRepository;
 import com.myvisa.myvisa.util.Converter;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +35,7 @@ public class CenterServiceImplements implements CenterService{
         }
 
         Center center = objectMapper.convertValue(centerDto, Center.class);
-        center.setStatus(String.valueOf(status.CREATE));
+        center.setStatus(String.valueOf(Status.CREATED));
         Center save = centerRepository.save(center);
         return objectMapper.convertValue(save, CenterDto.class);
     }
@@ -56,7 +57,7 @@ public class CenterServiceImplements implements CenterService{
         read(id);
 
         Center center = objectMapper.convertValue(centerDto, Center.class);
-        center.setStatus(String.valueOf(status.UPDATE));
+        center.setStatus(String.valueOf(Status.UPDATED));
         Center save = centerRepository.save(center);
         return objectMapper.convertValue(save, CenterDto.class);
     }
@@ -64,7 +65,7 @@ public class CenterServiceImplements implements CenterService{
     @Override
     public CenterDto delete(Long id) {
         Center center = objectMapper.convertValue(read(id), Center.class);
-        center.setStatus(String.valueOf(status.DELETED));
+        center.setStatus(String.valueOf(Status.DELETED));
         centerRepository.save(center);
         return objectMapper.convertValue(center, CenterDto.class);
     }
