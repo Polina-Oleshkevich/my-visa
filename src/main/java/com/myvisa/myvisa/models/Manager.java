@@ -23,7 +23,7 @@ public class Manager {
     private String email;
 
     @OneToOne(fetch = FetchType.EAGER)
-    private Manager manager;
+    private Center center;
 
     private String status;
 

@@ -4,10 +4,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ErrorException {
+public class ErrorMessage {
     private String message;
 
-    public ErrorException(String message) {
+    public ErrorMessage(String message) {
         this.message = message;
     }
 }
