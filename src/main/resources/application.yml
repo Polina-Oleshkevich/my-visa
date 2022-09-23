@@ -21,14 +21,13 @@ spring:
     password: P@$$w0rd
     driver-class-name: org.postgresql.Driver
 
+  devtools:
+    livereload:
+      enabled: false
+
 server:
   error:
     include-message: always
-
-management:
-  endpoint:
-    health:
-      show-details: always
 
 auth:
   header: Authorization

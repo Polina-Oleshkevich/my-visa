@@ -1,12 +1,13 @@
 package com.myvisa.myvisa.models;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-@Data
+@Getter
+@Setter
 @Entity
-//@Table(schema="public", name="manager")
 public class Manager {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -15,11 +16,7 @@ public class Manager {
     private String last_name;
     private LocalDate date_birth;
     private LocalDate employment_date;
-
-    @Column(name = "phone")
     private Integer phone;
-
-    @Column(name = "email")
     private String email;
 
     @OneToOne(fetch = FetchType.EAGER)

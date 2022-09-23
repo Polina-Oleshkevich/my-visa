@@ -1,23 +1,20 @@
 package com.myvisa.myvisa.models;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-@Data
+@Getter
+@Setter
 @Entity
-//@Table(schema="public", name="visa")
 public class Visa {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String visa_type;
     private Integer visa_term;
-
-    @Column(name = "purpose")
     private String purpose;
-    @Column(name = "country")
     private String country;
-
     private Integer price;
 
     @OneToOne(fetch = FetchType.EAGER)

@@ -1,12 +1,14 @@
 package com.myvisa.myvisa.models;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-@Data
+
 @Entity
-//@Table(schema="public", name="client")
+@Getter
+@Setter
 public class Client {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -15,10 +17,6 @@ public class Client {
     private String first_name;
     private String last_name;
     private LocalDate date_birth;
-
-    @Column(name = "email")
     private String email;
-
     private String status;
-
 }
