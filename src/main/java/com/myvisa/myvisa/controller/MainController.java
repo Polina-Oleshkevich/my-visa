@@ -1,22 +1,21 @@
 package com.myvisa.myvisa.controller;
 
-import com.myvisa.myvisa.repos.UserRepository;
+import com.myvisa.myvisa.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
 
-    private UserRepository userRepository;
+    private final ClientService clientService;
 
-    @Autowired
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
+@Autowired
+    public MainController(ClientService clientService) {
+        this.clientService = clientService;
     }
+
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "Главная страница");
@@ -57,14 +56,5 @@ public class MainController {
     public String info(Model model) {
         model.addAttribute("title", "Подробнее...");
         return "info";
-    }
-    @RequestMapping("/users")
-    public String showAllUsers(Model model, Pageable pageable) {
-        model.addAttribute("users", userRepository.findAll(pageable));
-        return "userreg";
-    }
-    @GetMapping("/login")
-    public String toLoginPage() {
-        return "login";
     }
 }

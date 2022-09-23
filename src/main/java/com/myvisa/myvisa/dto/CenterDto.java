@@ -12,6 +12,5 @@ public class CenterDto {
     private Integer phone;
     private String email;
     private LocalDate open_data;
-    private LocalDate close_data;
     private String status;
 }

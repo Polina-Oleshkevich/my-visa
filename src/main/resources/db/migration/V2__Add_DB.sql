@@ -5,10 +5,10 @@ insert into public.client(first_name, last_name, date_birth, email, status)
 values ('Ivan', 'Ivanov', '1998-05-05', 'iii@mail.ru', 'CREATED');
 
 insert into public.center(city, address, phone, email, open_data, admin_id, status)
-values ('Krasnodar', 'str. Krasnaya 155, 607', 89898005007, 'polina.visa@mail.ru', '01.01.2022', 1, 'CREATED');
+values ('Moscow', 'Lenina', 8005007, 'aaa@mail.ru', '2022-01-01', 1, 'CREATED');
 
 insert into public.manager(first_name, last_name, date_birth, employment_date, phone, email, center_id, status)
-values ('Petr', 'Petrov', '1998-05-05', '2022-01-01', 89181624070, 'ppp@mail.ru', 1, 'CREATED');
+values ('Petr', 'Petrov', '1998-05-05', '2022-01-01', 1624070, 'ppp@mail.ru', 1, 'CREATED');
 
 insert into public.request(visit_date, travel_date, client_id, center_id, manager_id, status)
 values ('2022-01-08', '2022-08-08', 1, 1, 1, 'CREATED');

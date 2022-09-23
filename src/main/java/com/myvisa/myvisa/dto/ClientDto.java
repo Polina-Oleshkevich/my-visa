@@ -7,7 +7,5 @@ public class ClientDto {
     private String first_name;
     private String last_name;
     private String email;
-    private String login;
-    private String password;
     private String status;
 }

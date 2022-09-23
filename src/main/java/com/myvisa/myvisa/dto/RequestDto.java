@@ -7,8 +7,8 @@ import java.time.LocalDate;
 @Data
 public class RequestDto {
     private Long id;
-    private String status;
+
+    private LocalDate visit_date;
     private LocalDate travel_date;
-    private String documents;
-    private LocalDate payment_date;
+    private String status;
 }

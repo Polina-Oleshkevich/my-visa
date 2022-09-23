@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 @Data
 @Entity
-@Table(schema="public", name="visa")
+//@Table(schema="public", name="visa")
 public class Visa {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

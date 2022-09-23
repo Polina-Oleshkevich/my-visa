@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 @Data
 @Entity
-@Table(schema="public", name="request")
+//@Table(schema="public", name="request")
 public class Request {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

@@ -14,7 +14,6 @@ import java.util.List;
 public class AdminController {
 
     private final AdminService adminService;
-
     @PostMapping
     public ResponseEntity<String> createManager(@RequestBody AdminDto adminDto) {
         return adminService.createAdmin(adminDto);
@@ -40,3 +39,5 @@ public class AdminController {
         return adminService.getAllAdmins();
     }
 }
+
+

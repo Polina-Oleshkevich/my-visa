@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 @Data
 @Entity
-@Table(schema="public", name="center")
+//@Table(schema="public", name="center")
 public class Center {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,8 +15,6 @@ public class Center {
     private String address;
     private Integer phone;
     private String email;
-
-    @Column(name = "open_data")
     private LocalDate open_data;
 
     @OneToOne(fetch = FetchType.EAGER)
