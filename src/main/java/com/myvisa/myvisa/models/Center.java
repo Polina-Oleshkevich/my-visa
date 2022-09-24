@@ -15,9 +15,11 @@ public class Center {
     private Long id;
     private String city;
     private String address;
-    private Integer phone;
+    private String phone;
     private String email;
-    private LocalDate open_data;
+
+    @Column(name = "open_data")
+    private LocalDate openData;
 
     @OneToOne(fetch = FetchType.EAGER)
     private Admin admin;

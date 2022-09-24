@@ -9,8 +9,8 @@ public class CenterDto {
     private Long id;
     private String city;
     private String address;
-    private Integer phone;
+    private String phone;
     private String email;
-    private LocalDate open_data;
+    private LocalDate openData;
     private String status;
 }

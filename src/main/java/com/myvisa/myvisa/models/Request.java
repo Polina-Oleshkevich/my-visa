@@ -13,8 +13,11 @@ public class Request {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private LocalDate visit_date;
-    private LocalDate travel_date;
+    @Column (name = "visit_date")
+    private LocalDate visitDate;
+
+    @Column (name = "travel_date")
+    private LocalDate travelDate;
 
     @OneToOne(fetch = FetchType.EAGER)
     private Client client;

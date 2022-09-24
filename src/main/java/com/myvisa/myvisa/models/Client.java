@@ -14,9 +14,15 @@ public class Client {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
 
     private Long id;
-    private String first_name;
-    private String last_name;
-    private LocalDate date_birth;
+    @Column (name = "first_name")
+    private String firstName;
+
+    @Column (name = "last_name")
+    private String lastName;
+
+    @Column (name = "date_birth")
+    private LocalDate dateBirth;
+
     private String email;
     private String status;
 }
